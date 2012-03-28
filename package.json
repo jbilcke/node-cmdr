@@ -34,14 +34,8 @@
     "node": "0.4.x || 0.6.x"
   },
   "dependencies": {
-     "pkginfo"      : "0.2.x", 
-     "coffee-script": "1.2.x",
-     "burrito"      : "0.2.x",
-     "js2coffee"    : "0.1.x"
         
   },
   "devDependencies": {
-    "mocha": "0.8.x",
-    "coffee-script" : "1.2.x"
   }
 }
