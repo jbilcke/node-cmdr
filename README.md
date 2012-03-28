@@ -70,27 +70,42 @@
   For the moment the syntax is minimal, and code is documentation. You are warned.
 
 ``` coffeescript
-cli =
+#!/usr/bin/env coffee
+
+# use
+cmdr = require 'cmdr'
+
+# think
+api =
   foo:
     desc: "create a new bar"
     func: (name="") ->
       if name.length is 0
-        error "you need to provide a bar name"
+        console.log "you need to provide a bar name"
         process.exit 1
       else
-        log "creating bar #{name}"
+        console.log "creating bar #{name}"
         process.exit 0
 
   pi:
     desc: "don't use me"
     func: ->
-      3.1415
+      console.log 3.1415
 
-cmdr cli
+# profit
+cmdr api
+
 ```
 
-### API    
+  Now you should be able to use your program in command-line, to call the functions:
 
-#### Human-readable
+``` bash
+  $ myprogram foo
+  you need to provide a bar name
 
-  NO.
+  $ myprogram foo bara
+  creating bar bara
+
+  $ myprogram pi
+  3.1415
+```

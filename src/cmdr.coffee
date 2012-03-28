@@ -28,5 +28,5 @@ main = (model, a=[]) ->
           error "never heard about #{msg}"
         return
 
-exports.cmdr = cmdr = (model) ->
+module.exports = (model) ->
   main model, process.argv[2..]
