@@ -1,0 +1,12 @@
+node_modules
+.project
+.env
+.DS_Store
+support
+tmp
+config.json
+.DS_Store
+*.log
+*~
+*.swp
+.*
