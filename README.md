@@ -77,18 +77,24 @@ cmdr = require 'cmdr'
 
 # think
 api =
-  foo:
-    desc: "create a new bar"
-    func: (name="") ->
-      if name.length is 0
-        console.log "you need to provide a bar name"
-        process.exit 1
-      else
-        console.log "creating bar #{name}"
-        process.exit 0
+  help:
+    pi: ->
+      console.log "don't use me"
+
+  foo: (name="") ->
+    if name.length is 0
+      console.log "you need to provide a bar name"
+      process.exit 1
+    else
+      console.log "creating bar #{name}"
+      process.exit 0
+  
+  list:
+    things: ->
+      # replace by your custom join(), colors, cliff whatever code
+      console.log "- this\n- and this\n- and this"
 
   pi:
-    desc: "don't use me"
     func: ->
       console.log 3.1415
 
@@ -106,6 +112,14 @@ cmdr api
   $ myprogram foo bara
   creating bar bara
 
+  $ myprogram help pi
+  don't use me
+
   $ myprogram pi
   3.1415
+
+  $ myprogram list things
+  - this
+  - and this
+  - and this
 ```
