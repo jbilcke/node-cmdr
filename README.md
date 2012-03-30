@@ -70,12 +70,10 @@
   For the moment the syntax is minimal, and code is documentation. You are warned.
 
 ``` javascript
-#!/usr/bin/env node
-
 // use
 var cmdr = require('cmdr');
 
-# think
+// design
 var api = {
   help: {
     pi: function () {
@@ -103,12 +101,10 @@ var api = {
   pi: function () { 
     console.log( 3.1415);
   }
-
 };
 
 // profit
 cmdr(api);
-
 
 ```
 
