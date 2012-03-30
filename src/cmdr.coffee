@@ -10,18 +10,18 @@ main = (model, a=[]) ->
       msg += "#{a[i]}"
       stack = stack[a[i]]
       if i is a.length - 1
-        log "end of stack, calling.."
-        stack.func()
+        #log "end of stack, calling.."
+        stack()
       
     else
       try
-        log "calling stack.func #{a[i..]}..."
-        stack.func a[i..]...
+        #log "calling stack.func #{a[i..]}..."
+        stack a[i..]...
       catch e
-        log "exception: #{e}"
+        #log "exception: #{e}"
         if msg.length is 0
           if a.length is 0
-            log model.help.func()
+            model.help.default()
           else
             error "never heard about '#{a[0]}'"
         else

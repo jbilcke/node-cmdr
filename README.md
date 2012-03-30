@@ -94,9 +94,8 @@ api =
       # replace by your custom join(), colors, cliff whatever code
       console.log "- this\n- and this\n- and this"
 
-  pi:
-    func: ->
-      console.log 3.1415
+  pi: -> 
+    console.log 3.1415
 
 # profit
 cmdr api
@@ -105,7 +104,7 @@ cmdr api
 
   Now you should be able to use your program in command-line, to call the functions:
 
-``` bash
+```
   $ myprogram foo
   you need to provide a bar name
 
@@ -123,3 +122,8 @@ cmdr api
   - and this
   - and this
 ```
+
+  cmdr don't know if you want to emit warnings, errors or log messages,
+  so you have to print everything yourself.
+
+
