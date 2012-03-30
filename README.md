@@ -69,36 +69,46 @@
 
   For the moment the syntax is minimal, and code is documentation. You are warned.
 
-``` coffeescript
-#!/usr/bin/env coffee
+``` javascript
+#!/usr/bin/env node
 
-# use
-cmdr = require 'cmdr'
+// use
+var cmdr = require('cmdr');
 
 # think
-api =
-  help:
-    pi: ->
+var api = {
+  help: {
+    pi: function () {
       console.log "don't use me"
+    }
+  },
 
-  foo: (name="") ->
-    if name.length is 0
-      console.log "you need to provide a bar name"
-      process.exit 1
-    else
-      console.log "creating bar #{name}"
-      process.exit 0
-  
-  list:
-    things: ->
-      # replace by your custom join(), colors, cliff whatever code
-      console.log "- this\n- and this\n- and this"
+  foo: function (name) {
+    if (name !== undefined) {
+      console.log("you need to provide a bar name");
+      process.exit(1);
+    } else {
+      console.log("creating bar #{name}");
+      process.exit(0);
+    }
+  },
 
-  pi: -> 
-    console.log 3.1415
+  list: {
+    things: function () {
+      // replace by your custom join(), colors, cliff whatever code
+      console.log("- this\n- and this\n- and this");
+    }
+  },
 
-# profit
-cmdr api
+  pi: function () { 
+    console.log( 3.1415);
+  }
+
+};
+
+// profit
+cmdr(api);
+
 
 ```
 
@@ -127,3 +137,26 @@ cmdr api
   so you have to print everything yourself.
 
 
+## Fancy CoffeeScript Demo
+
+  You can find it in /examples
+
+``` coffeescript
+(require 'cmdr')
+
+  help:
+    pi: -> console.log "very important for a restaurant"
+
+  order: (meal="") ->
+    if meal.length is 0
+      console.error "you need to order something"
+      process.exit 1
+    else
+      console.log "delivering #{meal}"
+      process.exit 0
+
+  list:
+    meals: -> console.log "- chicken\n- cheese\n- potatoes"
+
+  pi: -> console.log 3.1415
+```

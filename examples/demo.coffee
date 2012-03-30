@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 (require 'cmdr')
+
   help:
     pi: -> console.log "very important for a restaurant"
 
