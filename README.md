@@ -10,6 +10,13 @@
 
   Looks, Ma!.. No doc!
 
+## TODO
+  
+  Would work nicely with complete
+
+https://github.com/hij1nx/complete
+
+
 ## Installation
 
 ### Global install:
