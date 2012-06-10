@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="node-cmdr : Command line apps made easy" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>node-cmdr</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/daizoru/node-cmdr">View on GitHub</a>
+
+          <h1 id="project_title">node-cmdr</h1>
+          <h2 id="project_tagline">Command line apps made easy</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/daizoru/node-cmdr/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/daizoru/node-cmdr/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>node-cmdr</h1>
+
+<p><em>command line apps made easy</em></p>
+
+<h2>Overview</h2>
+
+<p>Minimalist framework for command line apps. CoffeeScript demo:</p>
+
+<div class="highlight">
+<pre>  <span class="c1"># myscript.coffee</span>
+  <span class="p">(</span><span class="nx">require</span> <span class="s">'cmdr'</span><span class="p">)</span>
+    <span class="nv">push:</span>
+      <span class="nv">origin: </span><span class="nf">(target) -&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">"uploading </span><span class="si">#{</span><span class="nx">target</span><span class="si">}</span><span class="s">"</span>
+</pre>
+</div>
+
+
+<p>If you build it to js, install it in a /bin somewhere, and run myscript:</p>
+
+<pre><code>  $ myscript push origin foo
+  uploading foo
+</code></pre>
+
+<p>As I said. Minimalist.</p>
+
+<h3>Current status</h3>
+
+<p>This library is still in development so expect heavy refactoring, broken master, and sparse documentation until I have more time to settle everything.</p>
+
+<h3>Help</h3>
+
+<p>Please open a github issue if something is broken - thanks!</p>
+
+<h3>TODO / Wishlist</h3>
+
+<ul>
+<li>Use node-complete ?: <a href="https://github.com/hij1nx/complete">https://github.com/hij1nx/complete</a>
+</li>
+<li>Use node-commander to parse args?</li>
+</ul><h3>Licensing</h3>
+
+<p>BSD (see <a href="https://github.com/daizoru/node-cmdr/blob/master/LICENCE.txt">LICENCE.txt</a> for details)</p>
+
+<h2>Installation</h2>
+
+<h3>For users</h3>
+
+<h4>Add to your project</h4>
+
+<pre><code>$ cd myproject
+$ npm install cmdr
+</code></pre>
+
+<p>This will create a copy of node-cmdr an put it inside <em>myproject/node_modules/cmdr</em></p>
+
+<p>Don't forget to open your package.json and add this to dependencies:</p>
+
+<div class="highlight">
+<pre>  <span class="s">"cmdr"</span><span class="p-Indicator">:</span> <span class="s">"0.0.x"</span>
+</pre>
+</div>
+
+
+<h4>Global install</h4>
+
+<pre><code>$ npm install cmdr -g
+</code></pre>
+
+<h4>Run the tests</h4>
+
+<pre><code>No tests for the moment
+</code></pre>
+
+<h3>For contributors</h3>
+
+<p>To install node-cmdr in a development setup:</p>
+
+<pre><code>$ git clone http://github.com/daizoru/node-cmdr.git
+$ cd node-cmdr
+$ npm link
+</code></pre>
+
+<p>To compile sources (located in /src, written in CoffeeScript) to /lib (in JavaScript):</p>
+
+<pre><code>$ npm run-script build
+</code></pre>
+
+<h2>Documentation</h2>
+
+<h3>Examples</h3>
+
+<div class="highlight">
+<pre><span class="c1">// use</span>
+<span class="kd">var</span> <span class="nx">cmdr</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cmdr'</span><span class="p">);</span>
+
+<span class="c1">// design</span>
+<span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">help</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">pi</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s2">"don't use me"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+
+  <span class="nx">foo</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"you need to provide a bar name"</span><span class="p">);</span>
+      <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"creating bar #{name}"</span><span class="p">);</span>
+      <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+
+  <span class="nx">list</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">things</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// replace by your custom join(), colors, cliff whatever code</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"- this\n- and this\n- and this"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+
+  <span class="nx">pi</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> 
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="mf">3.1415</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// profit</span>
+<span class="nx">cmdr</span><span class="p">(</span><span class="nx">api</span><span class="p">);</span>
+
+</pre>
+</div>
+
+
+<p>Now you should be able to use your program in command-line, to call the functions:</p>
+
+<pre><code>  $ myprogram foo
+  you need to provide a bar name
+
+  $ myprogram foo bara
+  creating bar bara
+
+  $ myprogram help pi
+  don't use me
+
+  $ myprogram pi
+  3.1415
+
+  $ myprogram list things
+  - this
+  - and this
+  - and this
+</code></pre>
+
+<p>cmdr don't know if you want to emit warnings, errors or log messages,
+  so you have to print everything yourself.</p>
+
+<h3>Fancy CoffeeScript Demo</h3>
+
+<p>You can find it in /examples</p>
+
+<div class="highlight">
+<pre><span class="p">(</span><span class="nx">require</span> <span class="s">'cmdr'</span><span class="p">)</span>
+
+  <span class="nv">help:</span>
+    <span class="nv">pi: </span><span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">"very important for a restaurant"</span>
+
+  <span class="nv">order: </span><span class="nf">(meal="") -&gt;</span>
+    <span class="nx">unless</span> <span class="nx">meal</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="s">"you need to order something"</span>
+      <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span> <span class="mi">1</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">"delivering </span><span class="si">#{</span><span class="nx">meal</span><span class="si">}</span><span class="s">"</span>
+
+  <span class="nv">list:</span>
+    <span class="nv">meals: </span><span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">"- chicken\n- cheese\n- potatoes"</span>
+
+  <span class="nv">pi: </span><span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="mf">3.1415</span>
+</pre>
+</div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">node-cmdr maintained by <a href="https://github.com/daizoru">daizoru</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
