@@ -1,4 +1,5 @@
 #!/usr/bin/env coffee
+
 (require 'cmdr')
 
   help:

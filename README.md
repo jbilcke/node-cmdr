@@ -1,80 +1,67 @@
 # node-cmdr
 
-*A library to define command line interfaces*
+*command line apps made easy*
 
-## Licence
+## Overview
 
-  New-Style BSD: you can use it for doing evil stuff, but I'm not responsible (see [LICENCE.txt](https://github.com/daizoru/node-cmdr/blob/master/LICENCE.txt) for details).
-  
-## How it work
+  Minimalist framework for command line apps.
 
-  Looks, Ma!.. No doc!
+### Current status
 
-## TODO
-  
-  Would work nicely with complete
+  This library is still in development so expect heavy refactoring and sparse documentation until I have more time to settle everything.
 
-https://github.com/hij1nx/complete
 
+### Help
+
+  Please open a github issue if something is broken - thanks!
+
+### TODO / Wishlist
+
+  * Use complete: https://github.com/hij1nx/complete
+  * Use node-commander to parse args?
+
+### Licensing
+
+  BSD (see [LICENCE.txt](https://github.com/daizoru/node-cmdr/blob/master/LICENCE.txt) for details)
 
 ## Installation
 
-### Global install:
+### For users
 
-  This way:
-  
-``` bash
-  npm install cmdr  -g
-```
+#### Add to your project
 
-  You need to have [npm](http://npmjs.org) installed.
-
-### Local project install:
-
-  Open your package.json and add this to dependencies:
+    $ cd myproject
+    $ npm install http://github.com/daizoru/node-cmdr.git
+ 
+  then edit your package.json and add this to dependencies:
 
 ``` yaml
-  "cmdr": "0.0.0"
+  "cmdr": "http://github.com/daizoru/node-cmdr.git"
 ```
+   
+#### Global install
 
-  Bind to the system (may need sudo depending on your NPM config):
-  
+    $ npm install http://github.com/daizoru/node-cmdr.git -g
+
+#### Run the tests
+
+    No tests for the moment
+
+### For contributors
+
+  To install node-cmdr in a development setup:
+
+    $ git clone http://github.com/daizoru/node-cmdr.git
+    $ cd node-cmdr
     $ npm link
 
-## Development Instructions
+  To compile sources (located in /src, written in CoffeeScript) to /lib (in JavaScript):
 
-  Install development dependencies (can take quite a time!):
-
-    $ npm install --dev
-
-
-  Run the tests (should compile CoffeeScript down to JavaScript):
-  
-    $ npm test
- 
- 
-  Manual compile to JS:
-  
     $ npm run-script build
-  
-    
-  Watch for changes in the CoffeeScript sources, and automatically compile to JS:
-  
-    $ npm run-script watch
-        
-  
-  Bind to the system (may need sudo depending on your NPM config):
-  
-    $ npm link
 
-## TODO
-
-  Need to implement binding of help/description strings to unix man and --help
 ## Documentation
 
-### Defining an interface
-
-  For the moment the syntax is minimal, and code is documentation. You are warned.
+### Examples
 
 ``` javascript
 // use
@@ -140,7 +127,7 @@ cmdr(api);
   so you have to print everything yourself.
 
 
-## Fancy CoffeeScript Demo
+### Fancy CoffeeScript Demo
 
   You can find it in /examples
 

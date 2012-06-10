@@ -1,5 +1,5 @@
 
-{log,error} = require "daizoru-toolbox"
+{log,error} = require 'util'
 
 main = (model, a=[]) ->
   stack = model
