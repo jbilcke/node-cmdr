@@ -4,12 +4,19 @@
 
 ## Overview
 
-  Minimalist framework for command line apps.
+  Minimalist framework for command line apps. CoffeeScript demo:
+
+``` coffeescript
+  (require 'cmdr')
+  push:
+    origin: (target) -> console.log "something like git push origin #{target}"
+```
+
+  As I said. Minimalist.
 
 ### Current status
 
-  This library is still in development so expect heavy refactoring and sparse documentation until I have more time to settle everything.
-
+  This library is still in development so expect heavy refactoring, broken master, and sparse documentation until I have more time to settle everything.
 
 ### Help
 
@@ -17,7 +24,7 @@
 
 ### TODO / Wishlist
 
-  * Use complete: https://github.com/hij1nx/complete
+  * Use node-complete ?: https://github.com/hij1nx/complete
   * Use node-commander to parse args?
 
 ### Licensing
@@ -31,17 +38,19 @@
 #### Add to your project
 
     $ cd myproject
-    $ npm install http://github.com/daizoru/node-cmdr.git
+    $ npm install cmdr
  
-  then edit your package.json and add this to dependencies:
+  This will create a copy of node-cmdr an put it inside *myproject/node_modules/cmdr*
+
+  Don't forget to open your package.json and add this to dependencies:
 
 ``` yaml
-  "cmdr": "http://github.com/daizoru/node-cmdr.git"
+  "cmdr": "0.0.x"
 ```
    
 #### Global install
 
-    $ npm install http://github.com/daizoru/node-cmdr.git -g
+    $ npm install cmdr -g
 
 #### Run the tests
 
