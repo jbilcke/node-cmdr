@@ -7,11 +7,17 @@
   Minimalist framework for command line apps. CoffeeScript demo:
 
 ``` coffeescript
+  # myscript.coffee
   (require 'cmdr')
   push:
     origin: (target) -> console.log "something like git push origin #{target}"
 ```
 
+  Then you can use it like
+
+    $ myscript push origin foo
+    $ something like git push origin foo
+    
   As I said. Minimalist.
 
 ### Current status
