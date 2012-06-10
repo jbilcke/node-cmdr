@@ -10,14 +10,14 @@
   # myscript.coffee
   (require 'cmdr')
     push:
-      origin: (target) -> console.log "uploading to #{target}"
+      origin: (target) -> console.log "uploading #{target}"
 ```
 
   If you build it to js, install it in a /bin somewhere, and run myscript:
 
 ```
   $ myscript push origin foo
-  uploading to foo
+  uploading foo
 ```
 
   As I said. Minimalist.
