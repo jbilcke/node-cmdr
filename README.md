@@ -9,15 +9,17 @@
 ``` coffeescript
   # myscript.coffee
   (require 'cmdr')
-  push:
-    origin: (target) -> console.log "something like git push origin #{target}"
+    push:
+      origin: (target) -> console.log "uploading to #{target}"
 ```
 
-  Then you can use it like
+  If you build it to js, install it in a /bin somewhere, and run myscript:
 
-    $ myscript push origin foo
-    $ something like git push origin foo
-    
+```
+  $ myscript push origin foo
+  uploading to foo
+```
+
   As I said. Minimalist.
 
 ### Current status
