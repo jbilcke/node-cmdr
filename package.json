@@ -2,12 +2,12 @@
    "license" : "BSD",
     "author" : {
         "name" : "Julian Bilcke",
-        "email" : "julian.bilcke@gmail.com",
+        "email" : "julian.bilcke@daizoru.com",
         "url" : "http://github.com/daizoru"
    },
   "name": "cmdr",
-  "description": "A library to define command line interfaces",
-  "version": "0.0.0",
+  "description": "command line apps made easy",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/daizoru/node-cmdr.git"
@@ -15,7 +15,7 @@
     "keywords" : [
        "command-line",
        "cli",
-       "coffeescript"
+       "router"
     ],
     
     "directories" : {
@@ -29,12 +29,6 @@
     "watch" : "coffee --watch --compile --output lib/ src/",    
     "pretest" : "coffee --compile --output lib/ src/",    
     "test" : "vows --spec"
-  },
-  "engines": {
-    "node": "0.4.x || 0.6.x"
-  },
-  "dependencies": {
-        
   },
   "devDependencies": {
   }
