@@ -16,7 +16,7 @@ require('cmdr')
     for i in [0...times]
       console.log msg
   
-  "buy something (cool|fancy) for \\w+": (adj, target) ->
+  "buy something (cool|fancy) for (\\w+)": (adj, target) ->
     console.log "okay I'll find something #{adj} for #{target}"
     
   "help": (cmd) ->
