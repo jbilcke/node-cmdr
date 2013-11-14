@@ -42,3 +42,7 @@ Problem solved.
   BSD (see [LICENCE.txt](https://github.com/daizoru/node-cmdr/blob/master/LICENCE.txt) for details)
 
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/daizoru/node-cmdr/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
