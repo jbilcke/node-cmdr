@@ -1,35 +1,30 @@
 {
-   "license" : "BSD",
-    "author" : {
-        "name" : "Julian Bilcke",
-        "email" : "julian.bilcke@daizoru.com",
-        "url" : "http://github.com/daizoru"
-   },
   "name": "cmdr",
-  "description": "command line apps made easy",
-  "version": "0.0.1",
+  "description": "simple command line api builder",
+  "version": "0.0.2",
+  "author": {
+    "name": "Julian Bilcke",
+    "email": "julian.bilcke@datagica.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/daizoru/node-cmdr.git"
+    "url": "https://github.com/jbilcke/node-cmdr.git"
   },
-    "keywords" : [
-       "command-line",
-       "cli",
-       "router"
-    ],
-    
-    "directories" : {
-      "lib" : "./lib",
-      "example" : "./example",
-      "test" : "./test"
-    },
-  "main" : "./lib/cmdr",
-  "scripts" : {
-    "build" : "coffee --compile --output lib/ src/",
-    "watch" : "coffee --watch --compile --output lib/ src/",    
-    "pretest" : "coffee --compile --output lib/ src/",    
-    "test" : "vows --spec"
+  "keywords": [],
+  "scripts": {
+    "build_examples": "babel examples/demo.es6 > examples/demo.js",
+    "build": "babel src --out-dir lib",
+    "test": "node_modules/mocha/bin/mocha --compilers js:babel/register --bail --require chai tests/*.js"
   },
-  "devDependencies": {
+  "main": "./lib/cmdr.js",
+  "licence": "./LICENSE.txt",
+  "dependencies": {
+    "babel": "^5.1.13",
+    "byline": "^4.2.1",
+    "chai": "^2.3.0",
+    "chai-fuzzy": "^1.5.0",
+    "clarinet": "^0.10.0",
+    "deep-eql": "^0.1.3",
+    "lodash": "^3.7.0"
   }
 }
