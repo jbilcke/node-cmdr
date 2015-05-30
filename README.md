@@ -48,14 +48,18 @@ cmdr({
 
 Now you can call you command line API this way:
 
+```
 $ node examples/demo.js say apple 1 time
 apple
+```
 
+
+``
 $ node examples/demo.js say beetlejuice 3 times
 beetlejuice
 beetlejuice
 beetlejuice
-
+```
 
 ### Licensing
 
