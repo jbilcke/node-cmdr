@@ -54,7 +54,7 @@ apple
 ```
 
 
-``
+```
 $ node examples/demo.js say beetlejuice 3 times
 beetlejuice
 beetlejuice
